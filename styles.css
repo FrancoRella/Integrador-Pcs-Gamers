@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -16,17 +18,19 @@ body {
 }
 
 .section-container {
-  max-width: 1300px;
-  width: 90%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 /**HEADER**/
 
 .header-pcs {
   display: flex;
-  height: 150px;
+  height: 100px;
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: sticky;
   top: 0%;
@@ -56,14 +60,14 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 60px;
+  gap: 40px;
 }
 
 .nav-bar i {
-  font-size: 40px;
+  font-size: 30px;
   color: white;
   cursor: pointer;
-  display: flex;
+  display: none;
 }
 
 #toggle-menu {
@@ -81,20 +85,21 @@ body {
   background-color: aqua;
 }
 
-@media (max-widht: 900px);
- {
+@media (max-width: 900px) {
   .nav-bar i {
     display: flex;
+    justify-content: center;
+    align-items: flex-end;
   }
 
   .list-cont {
     position: absolute;
     background-color: darkkhaki;
     flex-direction: column;
-    top: 150px;
+    top: 100px;
     right: 0;
     width: 100%;
-    height: calc(100vh - 150px);
+    height: calc(100vh - 100px);
     z-index: 9999;
     display: none;
   }
@@ -102,4 +107,253 @@ body {
   #toggle-menu:checked + .list-cont {
     display: flex;
   }
+}
+
+/*Section Portada*/
+
+.section-principal {
+  background-image: url(./assets/Img/POrtada.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  z-index: 0;
+  display: flex;
+  gap: 40px;
+}
+
+.portada {
+  color: yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 60px;
+  margin: 0 auto;
+}
+
+.portada h1 {
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.portada p {
+  font-size: 20px;
+}
+
+.button-wsp {
+  border: 5px solid yellow;
+  background: yellow;
+  color: black;
+  border-radius: 5px;
+}
+
+/**Section photos**/
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.text p {
+  background-color: #f7797d;
+}
+
+.text p::before {
+  content: '';
+  animation: efectoText 4s linear infinite;
+}
+
+@keyframes efectoText {
+  0% {
+    content: 'Pc-Gamers';
+  }
+
+  20% {
+    content: 'Periféricos';
+  }
+
+  40% {
+    content: 'Sillas Gamers';
+  }
+
+  60% {
+    content: 'Monitores';
+  }
+
+  80% {
+    content: 'Placas de Video';
+  }
+
+  100% {
+    content: 'Pc-Gamers';
+  }
+}
+
+.galeria-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 300px);
+  grid-gap: 10px;
+  margin: 0 auto;
+  width: 90%;
+  gap: 20px;
+}
+
+.galeria-item {
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 3px 3px 8px;
+  border: 1px solid black;
+}
+
+.galeria-item:nth-child(1) {
+  background-image: url(./assets/Img/Destacados-pc-gamers.jpg);
+  font-size: 28px;
+}
+
+.galeria-item:nth-child(2) {
+  background-image: url(./assets/Img/PC-Gaming.jpg);
+  font-size: 28px;
+}
+
+.galeria-item:nth-child(3) {
+  background-image: url(./assets/Img/perifericos.jpg);
+  font-size: 28px;
+}
+
+.galeria-item:nth-child(4) {
+  background-image: url(./assets/Img/monitores.jpg);
+  font-size: 28px;
+}
+
+.galeria-item:nth-child(5) {
+  background-image: url(./assets/Img/sillagamers.jpg);
+  font-size: 28px;
+}
+
+.galeria-item:nth-child(6) {
+  background-image: url(./assets/Img/placa-de-video.jpg);
+  font-size: 28px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0;
+  transition: 0.8s;
+  gap: 25px;
+}
+
+.content h2,
+.content a {
+  color: #4a235a;
+  font-size: 30px;
+}
+
+.galeria-item:hover .content {
+  opacity: 0.8;
+  cursor: pointer;
+  background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+}
+
+@media (max-width: 900px) {
+  .galeria-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 300px);
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .galeria-container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 300px);
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+/**Section de pago y envio**/
+
+.section-pago {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #707b7c;
+  flex-wrap: wrap;
+  flex: 1 1 200px;
+  gap: 2px;
+}
+
+.pago-envio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.pago-envio i {
+  font-size: 50px;
+  padding: 12px;
+}
+
+.pago-envio p {
+  font-size: 20px;
+  padding: 12px;
+}
+
+/**Section Contacto**/
+
+.contacto-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 20px;
+}
+
+/**Footer**/
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #707b7c;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 25px;
+}
+
+.footer-copyright {
+  font-size: 20px;
 }
