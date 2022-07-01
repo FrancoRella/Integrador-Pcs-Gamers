@@ -167,7 +167,7 @@ body {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  font-size: 26px;
+  font-size: 30px;
 }
 
 .text p {
@@ -269,7 +269,7 @@ body {
 .content h2,
 .content a {
   color: #4a235a;
-  font-size: 30px;
+  font-size: 26px;
 }
 
 .galeria-item:hover .content {
