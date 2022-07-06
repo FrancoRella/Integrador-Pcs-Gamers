@@ -14,7 +14,8 @@ html {
 
 body {
   width: 100%;
-  background-color: darkkhaki;
+  background: linear-gradient(to top, #06beb6, #48b1bf);
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 .section-container {
@@ -28,24 +29,29 @@ body {
 
 .header-pcs {
   display: flex;
-  height: 100px;
+  height: 80px;
   width: 100%;
   justify-content: center;
   align-items: center;
   position: sticky;
   top: 0%;
   z-index: 99999;
+  background: linear-gradient(to right, #d3cce3, #e9e4f0);
 }
 
-.logo-cont {
+.log-cont {
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-}
-
-.log-cont img {
-  height: 100px;
-  padding: 4px;
+  justify-content: center;
+  font-size: 28px;
+  background: linear-gradient(to right, #0062ff, #ff0062);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  transform: rotateZ(-10deg);
 }
 
 .nav-bar {
@@ -70,19 +76,87 @@ body {
   display: none;
 }
 
+.list-cont a {
+  font-size: 23px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 500;
+  background: linear-gradient(to right, #0062ff, #ff0062);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.list-cont a:hover {
+  background: linear-gradient(to right, #f12711, #f5af19);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 #toggle-menu {
   display: none;
 }
 
-.button-reg,
-.button-ini {
-  border: 2px solid white;
+.boton2,
+.boton3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
   border-radius: 5px;
   padding: 5px;
+  cursor: pointer;
+  font-size: 23px;
+  font-weight: 500;
+  font-family: 'Josefin Sans', sans-serif;
+  position: relative;
+  background-color: #fdbfbf;
+  overflow: hidden;
+}
+/**Boton2**/
+
+.boton2::after {
+  content: '  ';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(to right, #ffefba, #ffffff);
+  z-index: 1;
+  top: -80px;
+  transition: all 1s ease;
 }
 
-.button-ini {
-  background-color: aqua;
+.boton2 a {
+  position: relative;
+  z-index: 5;
+  transition: all 1s ease;
+}
+
+.boton2:hover::after {
+  top: 0;
+}
+
+/**Boton3**/
+
+.boton3::after {
+  content: '  ';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(to right, #ffefba, #ffffff);
+  z-index: 1;
+  bottom: -80px;
+  transition: all 1s ease;
+}
+
+.boton3 a {
+  position: relative;
+  z-index: 5;
+  transition: all 1s ease;
+}
+
+.boton3:hover::after {
+  bottom: 0;
 }
 
 @media (max-width: 900px) {
@@ -129,6 +203,7 @@ body {
   z-index: 0;
   display: flex;
   gap: 40px;
+  opacity: 0.8;
 }
 
 .portada {
@@ -152,10 +227,17 @@ body {
 }
 
 .button-wsp {
-  border: 5px solid yellow;
   background: yellow;
   color: black;
   border-radius: 5px;
+  font-size: 20px;
+  box-shadow: 2px 2px coral;
+  transition: all 1s ease;
+}
+
+.button-wsp:hover {
+  box-shadow: 4px 4px coral;
+  font-size: 30px;
 }
 
 /**Section photos**/
@@ -168,10 +250,6 @@ body {
   align-items: center;
   text-transform: uppercase;
   font-size: 30px;
-}
-
-.text p {
-  background-color: #f7797d;
 }
 
 .text p::before {
@@ -377,4 +455,129 @@ body {
 
 .footer-copyright {
   font-size: 20px;
+}
+
+/**Login**/
+
+.register-container {
+  width: 50%;
+  height: 80vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  background-image: url(/assets/Img/login.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.usuario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 30px;
+  color: #e9e4f0;
+}
+.register-input {
+  font-size: 20px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);
+  transition: all 1s ease;
+  color: black;
+}
+
+.register-input:hover {
+  font-size: 25px;
+}
+
+.password {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 30px;
+  color: #e9e4f0;
+}
+
+/**Register**/
+
+.form-container {
+  width: 90%;
+  margin: 0 auto;
+  height: 80vh;
+  background-color: #e5e5f7;
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image: radial-gradient(circle at center center, #45f7ef, #e5e5f7),
+    repeating-radial-gradient(
+      circle at center center,
+      #45f7ef,
+      #45f7ef,
+      10px,
+      transparent 20px,
+      transparent 10px
+    );
+  background-blend-mode: multiply;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.form-title {
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+.form-input {
+  border: none;
+  background: none;
+  border-bottom: 2px solid black;
+  width: 100%;
+}
+
+.form-registro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 30%;
+}
+
+.form-label {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.form-boton {
+  font-size: 20px;
+  width: 30%;
+  background: linear-gradient(to top, #ef3b36, #ffffff);
+  border: none;
+  box-shadow: 3px 3px rgb(253, 109, 109);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.form-boton:hover {
+  background: linear-gradient(to bottom, #ef3b36, #ffffff);
+  box-shadow: 5px 5px rgb(253, 109, 109);
+}
+
+@media (max-width: 700px) {
+  .form-registro {
+    width: 80%;
+  }
+
+  .form-boton {
+    width: 80%;
+  }
 }
