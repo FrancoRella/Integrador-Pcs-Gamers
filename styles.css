@@ -398,8 +398,9 @@ body {
   width: 350px;
 }
 
-.pago-envio i {
-  font-size: 50px;
+.pago-envio img {
+  width: 70px;
+  height: 70px;
   padding: 12px;
   font-weight: 500;
 }
